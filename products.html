@@ -6,29 +6,47 @@
     <title>Document</title>
     <!--Tail wind-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function toggleMenu() {
+        let mobileMenu = document.getElementById("mobile-div");
+        mobileMenu.classList.toggle("translate-x-0");
+        mobileMenu.classList.toggle("translate-x-full");           
+    }
+    
+  </script>
 </head>
 <body>
     <!--nav-->
-    <nav class="bg-green-100 p-3 flex items-center justify-between shadow-xl sticky top-0 z-10">
-        <h1 class="text-2xl">Greenden</h1>
+    <div class="bg-green-100 w-full h-20 flex justify-between shadow-xl z-10 sticky top-0 ">
+        <div class="text-black italic text-4xl pl-10 pt-4">GREENDEN</div>
+        <div class="flex justify-center items-center h-20 w-1/4 lg:hidden " onclick="toggleMenu()"> <svg xmlns="http://www.w3.red/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-black h-10 w-3/6"> <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /> </svg> </div>
+          
+        <div id="desktop-div" class="w-1/4 flex justify-center items-center gap-3.5 hidden lg:flex ">
+            <a href="index.html" class=" p-2 w-20 text-center rounded-md text-black border border-orange-400 transition  duration-500  hover:text-black hover:bg-red-500 ">Home</a>
+            <a href="products.html" class=" p-2 w-20 text-center rounded-md text-black transition duration-500   hover:text-black hover:bg-red-500 ">Products</a>
+            <a href="contact.html" class=" p-2 w-20 text-center rounded-md text-black  transition duration-500  hover:text-black hover:bg-red-500">Contact</a>
+        </div>
+       </div>   
+       <div id="mobile-div" class="h-svh w-2/5 flex flex-col items-center gap-3.5 fixed top-20 right-0 z-30 bg-black-500 bg-opacity-95 transform translate-x-full transition-transform duration-500 ease-in-out p-4 lg:hidden font-black text-black" >
+        <a href="index.html" class=" p-2 w-20 text-center rounded-md text-black border border-white transition  duration-500  hover:text-white hover:bg-green-800">Home</a>
+        <a href="products.html" class=" p-2 w-20 text-center rounded-md text-black transition duration-500   hover:text-white hover:bg-green-800 ">Products</a>
+        <a href="contact.html" class=" p-2 w-20 text-center rounded-md text-black  transition duration-500  hover:text-white hover:bg-green-800">Contact</a>
+    </div>
+   </div>
+   <!-- pop up -->
+    <div id="popUp" class="hidden">
+    <div  class=" bg-black bg-opacity-50 h-full w-full fixed top-20 flex justify-center items-center" >
+      <div class="bg-black w-10/12 -mt-11 md:w-1/2">
+        <button onclick="closePopUp()" class=" bg-red-600 p-3 m-2 text-white rounded-full relative right-0">close</button>
+        <video controls >
+          <source src="./videos/video.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+      
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-1 w-6 md:hidden">
-            <path fill-rule="evenodd" d="M2 3.75A.75.75 0 0 1 2.75 3h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 3.75ZM2 8a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 8Zm0 4.25a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
-          </svg> 
-
-        <ul class="flex gap-5 text-gray-600 hidden md:flex">
-            <li>
-                <a class="hover:underline  hover:text-black" href="index.html">home</a>
-            </li>
-            <li>
-                <a class="hover:underline  hover:text-black" href="products.html">Products</a>
-            </li>
-            <li>
-                <a class="hover:underline hover:text-black" href="contact.html"> contact</a>
-            </li>
-        </ul>
-
-    </nav>
     <!--products-->
     <section>
         <div class="text-center font-bold text-3xl">
